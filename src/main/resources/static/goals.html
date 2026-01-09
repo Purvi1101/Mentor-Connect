@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goals Dashboard</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        /* Goal button */
+        .goal-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .goal-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            max-width: 80%;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-header {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .goal-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .close-button, .save-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .close-button {
+            background-color: #f44336;
+        }
+
+        .close-button:hover, .save-button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Goal Button -->
+    <button class="goal-button" onclick="openModal()">Write Your Goals</button>
+
+    <!-- Modal for entering goals -->
+    <div class="modal" id="goalModal">
+        <div class="modal-content">
+            <div class="modal-header">Set Your Goals</div>
+            <textarea id="shortTermGoal" class="goal-input" placeholder="Enter your short-term goal..."></textarea>
+            <textarea id="longTermGoal" class="goal-input" placeholder="Enter your long-term goal..."></textarea>
+            <button class="save-button" onclick="saveGoals()">Save Goals</button>
+            <button class="close-button" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Open Modal
+        function openModal() {
+            document.getElementById('goalModal').style.display = 'flex';
+        }
+
+        // Close Modal
+        function closeModal() {
+            document.getElementById('goalModal').style.display = 'none';
+        }
+
+        // Save Goals (Example - Console Log)
+        function saveGoals() {
+            let shortTermGoal = document.getElementById('shortTermGoal').value;
+            let longTermGoal = document.getElementById('longTermGoal').value;
+
+            if (shortTermGoal === "" || longTermGoal === "") {
+                alert("Please fill in both goals!");
+            } else {
+                console.log("Short-term Goal:", shortTermGoal);
+                console.log("Long-term Goal:", longTermGoal);
+                alert("Goals Saved!");
+
+                // Optionally: you can send the goals to a server or store them locally here.
+                closeModal();
+            }
+        }
+    </script>
+
+</body>
+</html>

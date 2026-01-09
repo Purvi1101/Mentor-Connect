@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentee Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mentee.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">Mentor Dashboard</div>
+            <ul class="nav-list">
+                <li><a href="mentor2.html">Dashboard</a></li> <!-- Link back to the main dashboard -->
+                <li><a href="mentee-management.html" class="active">Mentee Management</a></li> <!-- Active page link -->
+                <li><a href="sessions.html">Session Scheduling</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h2>Mentee Management</h2>
+            <div class="mentees-actions">
+                <button class="btn-add">Add New Mentee</button>
+                <button class="btn-pending">Pending Mentee Requests</button>
+            </div>
+            
+            <h3>Current Mentees</h3>
+            <table class="mentees-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>John Doe</td>
+                        <td>john.doe@example.com</td>
+                        <td>Active</td>
+                        <td><button class="btn-manage">Manage</button></td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>Jane Smith</td>
+                        <td>jane.smith@example.com</td>
+                        <td>Active</td>
+                        <td><button class="btn-manage">Manage</button></td>
+                    </tr>
+                    <tr>
+                        <td>003</td>
+                        <td>Robert Brown</td>
+                        <td>robert.brown@example.com</td>
+                        <td>Inactive</td>
+                        <td><button class="btn-manage">Manage</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- Footer -->
+            <div class="footer">
+                <p>&copy; 2024 Mentor Dashboard. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

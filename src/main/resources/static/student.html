@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="/css/abc5.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h2>Register</h2>
+            <p class="description">Fill in your details below to register</p>
+            <form id="menteeForm">
+
+            <div class="input-group">
+                    <label for="Name">First Name</label>
+                    <input type="text" id="Name" name="Name" placeholder="Name" required>
+                </div>
+                <div class="input-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" name="mobileNumber" placeholder="Mobile Number" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" placeholder="Age" required>
+                </div>
+                <div class="input-group">
+                    <label for="interest">Field of Interest</label>
+                    <select id="interest" name="fieldOfInterest" required>
+                        <option value="" disabled selected>Select Field of Interest</option>
+                        <option value="science">Science</option>
+                        <option value="arts">Arts</option>
+                        <option value="technology">Technology</option>
+                    </select>
+                </div>
+                <button type="submit" class="register-btn">Register Now</button>
+                <div class="back-to-home">
+                    <a href="login1.html">Back to Home</a>
+                </div>
+                <script src="/js/script.js"></script>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>

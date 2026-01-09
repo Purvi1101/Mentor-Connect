@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Meeting</title>
+    <link rel="stylesheet" href="session1.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+
+    <div class="container">
+        <h1>Create a New Meeting</h1>
+
+        <form action="#" method="POST">
+            <!-- Meeting Title -->
+            <label for="meetingTitle">Meeting Title:</label>
+            <input type="text" id="meetingTitle" name="meetingTitle" required>
+
+            <!-- Date & Time -->
+            <label for="meetingDate">Meeting Date:</label>
+            <input type="date" id="meetingDate" name="meetingDate" required>
+
+            <label for="meetingTime">Meeting Time:</label>
+            <input type="time" id="meetingTime" name="meetingTime" required>
+
+            <!-- Meeting Description -->
+            <label for="meetingDescription">Meeting Description:</label>
+            <textarea id="meetingDescription" name="meetingDescription" rows="4" required></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Create Meeting</button>
+        </form>
+    </div>
+
+</body>
+</html>

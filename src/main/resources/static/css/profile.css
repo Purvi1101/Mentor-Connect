@@ -1,0 +1,32 @@
+.profile-container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-picture img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.profile-details {
+    flex-grow: 1;
+}
+
+.profile-name {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+}
+
+.profile-info {
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0;
+}

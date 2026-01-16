@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Registration</title>
+    <link rel="stylesheet" href="/css/mentor.css">
+</head>
+<body>
+    <h1>Mentor Registration</h1>
+
+    <form id="register-form" action="/mentor/register" method="post">
+    <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Full Name" required><br><br>
+        
+        <label for="mobile">Mobile Number:</label><br>
+        <input type="text" id="mobile" name="mobile" placeholder="Mobile Number" required><br><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="Email" required><br><br>
+        
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" placeholder="Password" required><br><br>
+        
+        <label for="confirm_password">Confirm Password:</label><br>
+        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required><br><br>
+        
+        <label for="expertise">Area of Expertise:</label><br>
+        <select id="expertise" name="expertise" required>
+            <option value="" disabled selected>Select Area of Expertise</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Mobile Development">Mobile Development</option>
+            <option value="Data Science">Data Science</option>
+            <option value="Machine Learning">Machine Learning</option>
+            <option value="Cloud Computing">Cloud Computing</option>
+            <option value="Cybersecurity">Cybersecurity</option>
+            <option value="UI/UX Design">UI/UX Design</option>
+            <option value="Digital Marketing">Digital Marketing</option>
+            <option value="DevOps">DevOps</option>
+        </select><br><br>
+        
+        <label for="experience">Years of Experience:</label><br>
+        <select id="experience" name="experience" required>
+            <option value="" disabled selected>Select Years of Experience</option>
+            <option value="1-2">1-2 Years</option>
+            <option value="3-5">3-5 Years</option>
+            <option value="6-8">6-8 Years</option>
+            <option value="9+">9+ Years</option>
+        </select><br><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        document.getElementById('register-form').addEventListener('submit', function (e) {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm_password').value;
+
+            if (password !== confirmPassword) {
+                e.preventDefault();
+                alert('Passwords do not match!');
+                return;
+            }
+        });
+    </script>
+</body>
+</html>

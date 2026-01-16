@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Mentor Connect</title>
+    <link rel="stylesheet" href="setting.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Mentor Connect</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../../../../../../../AppData/Local/Temp/index.html">Home</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="settings.html" class="active">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="settings-page">
+        <div class="container">
+            <h2>Settings</h2>
+            <form class="settings-form" action="#" method="POST">
+                <!-- Profile Information -->
+                <div class="settings-section">
+                    <h3>Profile Information</h3>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" value="John Doe" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="john.doe@example.com" required>
+                    
+                    <label for="role">Role:</label>
+                    <select id="role" name="role">
+                        <option value="mentor" selected>Mentor</option>
+                        <option value="mentee">Mentee</option>
+                    </select>
+                </div>
+
+                <!-- Preferences -->
+                <div class="settings-section">
+                    <h3>Preferences</h3>
+                    <label for="availability">Availability:</label>
+                    <input type="text" id="availability" name="availability" placeholder="e.g., Weekdays, Evenings" value="Weekdays, Evenings">
+                    
+                    <label for="fields">Fields of Interest:</label>
+                    <input type="text" id="fields" name="fields" placeholder="e.g., Data Science, AI" value="Data Science, AI">
+                </div>
+
+                <!-- Account Settings -->
+                <div class="settings-section">
+                    <h3>Account Settings</h3>
+                    <label for="password">Change Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter new password">
+                    
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm new password">
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn">Save Changes</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Mentor Connect. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

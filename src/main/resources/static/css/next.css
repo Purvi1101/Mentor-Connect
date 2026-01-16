@@ -1,0 +1,157 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f4f9; /* Light grey background */
+  color: #333;
+}
+
+h1, h2 {
+  margin: 0;
+  color: #1e3a8a; /* Dark blue for headings */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Dashboard Container */
+.dashboard {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  background-color: #1e3a8a; /* Dark Blue */
+  color: #fff;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar .brand-logo h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sidebar .brand-logo span {
+  color: #facc15; /* Yellow accent */
+}
+
+.sidebar nav ul {
+  width: 100%;
+}
+
+.sidebar nav ul li {
+  padding: 12px 20px;
+  text-align: left;
+  transition: background 0.3s ease;
+}
+
+.sidebar nav ul li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.sidebar nav ul li:hover {
+  background-color: #facc15; /* Yellow hover */
+  color: #1e3a8a;
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.content {
+  background: #fff;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid #1e3a8a;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+/* Top Bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #1e3a8a;
+}
+
+.search-bar {
+  flex-grow: 1;
+  padding: 8px 12px;
+  margin: 0 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+button {
+  background-color: #1e3a8a;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #facc15;
+  color: #1e3a8a;
+}
+
+/* Settings Icon */
+.settings-icon button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #1e3a8a;
+  cursor: pointer;
+}
+
+.settings-icon button:hover {
+  color: #facc15;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mentor Chat</title>
+
+  <!-- SockJS & STOMP -->
+  <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+
+  <!-- Chat CSS -->
+  <link rel="stylesheet" href="/css/chat.css">
+</head>
+
+<body class="mentor">
+
+<div class="chat-container">
+
+  <div class="chat-header">
+    Mentor Chat
+  </div>
+
+  <div class="chat-box" id="chatBox"></div>
+
+  <div class="chat-input">
+    <input type="text" id="msg" placeholder="Type your message..." />
+    <button onclick="send()">Send</button>
+  </div>
+
+</div>
+
+<script>
+  let stompClient = null;
+
+  // ✅ MENTOR LOGIN
+  const loggedInUserId = 1;
+  const otherUserId = 2;
+
+  function connect() {
+      let socket = new SockJS('/ws');
+      stompClient = Stomp.over(socket);
+
+      stompClient.connect({}, function () {
+          console.log("Mentor connected");
+
+          stompClient.subscribe('/topic/messages', function (response) {
+              let msg = JSON.parse(response.body);
+
+              // sirf mentor–student ke beech ke msg
+              if (
+                  (msg.senderId === loggedInUserId && msg.receiverId === otherUserId) ||
+                  (msg.senderId === otherUserId && msg.receiverId === loggedInUserId)
+              ) {
+                  showMessage(msg);
+              }
+          });
+      });
+  }
+
+  connect();
+
+  function send() {
+      let input = document.getElementById("msg");
+      if (input.value.trim() === "") return;
+
+      stompClient.send("/app/chat.send", {}, JSON.stringify({
+          senderId: loggedInUserId,
+          receiverId: otherUserId,
+          message: input.value
+      }));
+
+      input.value = "";
+  }
+
+  function showMessage(msg) {
+      let messageDiv = document.createElement("div");
+      messageDiv.classList.add("message");
+
+      // 🔥 MAIN LOGIC
+      if (msg.senderId === loggedInUserId) {
+          messageDiv.classList.add("sent");      // RIGHT
+      } else {
+          messageDiv.classList.add("received");  // LEFT
+      }
+
+      messageDiv.innerHTML = `
+          ${msg.message}
+          <div class="time">${new Date().toLocaleTimeString()}</div>
+      `;
+
+      chatBox.appendChild(messageDiv);
+      chatBox.scrollTop = chatBox.scrollHeight;
+  }
+</script>
+
+</body>
+</html>
